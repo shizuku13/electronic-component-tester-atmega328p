@@ -25,6 +25,7 @@ The test time is about 1-2 seconds (except for large capacity capacitors). The d
 ### Capacitor Measurement Features
 
 ![Capacitor scheme](1.png)
+
 A capacitor, in addition to its capacitance (C), has a dielectric resistance (R), an Equivalent Series Resistance (ESR), and an Equivalent Series Inductance (ESL), which creates inductive reactance. At frequencies above the resonant frequency, the ESL begins to dominate, and the capacitor behaves like an inductor.
 
 The ESR and ESL values of capacitors are especially important for their operation in switching power supplies of computers and switching converters on motherboards. The charge and discharge currents of capacitors are large, and if the ESR value increases, the voltage drop across the capacitor increases, and the power dissipation ($P = I^2R$) also increases. Therefore, the capacitor starts to heat up and fails. Malfunctions are often caused by capacitors swelling due to overheating.
@@ -61,6 +62,7 @@ The ESR and ESL values of capacitors are especially important for their operatio
 ## 🛠 Principle of Operation
 
 ![Block diagram](2.png)
+
 The core of the tester's structure is the microcontroller. The principle of the tester's operation is that the microcontroller generates a test signal, applies it through a switching device to a ZIF socket with the radio component, and analyzes the reaction of this radio component to the signal, displaying the values of its parameters on the screen. The microcontroller implements its work by executing sequential program commands, storing intermediate results, and controlling external devices.
 
 The operating principle is based on processing input signals using the microcontroller's ADC:
@@ -81,6 +83,7 @@ The microcontroller processes information, converts the analog signal to digital
 ## 🧩 Hardware Implementation and Schematic
 
 ![Schematic](4.png)
+
 The data processing is controlled by a program that is "flashed" into the microcontroller's memory using a USB programmer.
 
 - **Measuring Circuit:** The tested capacitor is connected to pins 1 and 2 of the CON1 connector (ZIF socket). These pins are connected to port PB through high-precision reference resistors R14 - R19. The current and voltage drop across them serve as a reference for the ADC of port PC.
